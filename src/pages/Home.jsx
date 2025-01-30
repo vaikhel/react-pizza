@@ -83,7 +83,7 @@ const Home = () => {
 
   const pizzas = items.map((obj) => (
     // <Link to={`/pizza/${obj.id}`} key={obj.id}>
-      <PizzaBlock {...obj} />
+    <PizzaBlock key={obj.id} {...obj} />
     // </Link>
   ))
   const skeletons = [...new Array(4)].map((_, index) => (

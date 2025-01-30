@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @import '../variables';
 
 .button {
@@ -8,7 +10,8 @@
   min-width: 100px;
   text-align: center;
   cursor: pointer;
-  transition: background-color $duration ease-in-out, border-color $duration ease-in-out;
+  transition: background-color $duration ease-in-out,
+    border-color $duration ease-in-out;
   border: 1px solid transparent;
   @include noselect();
 
@@ -25,11 +28,11 @@
   }
 
   &:hover {
-    background-color: darken($orange, 8%);
+    background-color: color.adjust($orange, $lightness: -8%);
   }
 
   &:active {
-    background-color: darken($orange, 12%);
+    background-color: color.adjust($orange, $lightness: -12%);
     transform: translateY(1px);
   }
 
@@ -49,7 +52,7 @@
 
     &:hover,
     &:active {
-      background-color: lighten($color: $black, $amount: 10);
+      background-color: color.adjust($black, $lightness: 10%);
     }
   }
 
@@ -83,7 +86,7 @@
     }
 
     &:active {
-      background-color: darken($orange, 8%);
+      background-color: color.adjust($orange, $lightness: -8%);
     }
   }
 
